@@ -18,7 +18,7 @@ describe "schema_migration.sql" do
     expect(@db.execute("SELECT sql FROM (SELECT * FROM sqlite_master UNION ALL SELECT * FROM sqlite_temp_master) WHERE type!='meta' ORDER BY tbl_name, type DESC, name;").first.first).to include("name TEXT")
   end
 
-  it "has a type column" do
-    expect(@db.execute("SELECT sql FROM (SELECT * FROM sqlite_master UNION ALL SELECT * FROM sqlite_temp_master) WHERE type!='meta' ORDER BY tbl_name, type DESC, name;").first.first).to include("type TEXT")
-  end
+  # it "has a type column" do
+  #   expect(@db.execute("SELECT sql FROM (SELECT * FROM sqlite_master UNION ALL SELECT * FROM sqlite_temp_master) WHERE type!='meta' ORDER BY tbl_name, type DESC, name;").first.first).to include("type TEXT")
+  # end
 end
